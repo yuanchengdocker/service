@@ -1,0 +1,92 @@
+::-webkit-scrollbar {
+    display: none;
+    width: 0em;
+}
+::-webkit-scrollbar:horizontal {
+    display: none;
+    height: 0em;
+}
+html {
+    /*隐藏滚动条，当IE下溢出，仍然可以滚动*/
+    -ms-overflow-style:none;
+    /*火狐下隐藏滚动条*/
+    overflow:-moz-scrollbars-none;
+}
+/*Chrome下隐藏滚动条，溢出可以透明滚动*/
+html::-webkit-scrollbar{width:0px}
+body,html{height: 100% !important;}
+.wrapper{
+    height: 100% !important;
+    overflow: hidden;
+}
+.main-header{
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+.sidebar-menu{
+    overflow: visible;
+}
+/* .sidebar-menu>li.active>a{
+    background: none !important;
+}
+.sidebar-menu>li.active>a{
+    background: none !important;
+}
+.sidebar-menu>li:hover>a{
+    background: #1e282c !important;
+} */
+.main-sidebar{
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: visible;
+}
+.main-sidebar:hover{
+    overflow: visible;
+}
+.content-wrapper{
+    height: 100% !important;
+    overflow-y: scroll;
+    padding-top: 50px;
+}
+@media (max-width: 767px){
+    .content-wrapper {
+        padding-top: 100px;
+    }
+}
+@media (min-width: 768px){
+    .sidebar-mini.sidebar-collapse .main-footer{
+      margin-left: 0px !important;
+    }
+}
+.content-wrapper .content{
+    height: 100%;
+}
+.content-header{
+    padding: 0;
+    margin-bottom: 10px;
+}
+.main-content{
+    animation: entry-move 0.3s;
+    margin-bottom: 20px;
+    min-height: 90%;
+}
+#toolbar .panel{
+    margin-bottom: 0;
+}
+.bootstrap-table{
+    background-color: #ffffff;
+}
+
+.main-footer{
+    width: 100%;
+    margin-left: 0px !important;
+}
+@-webkit-keyframes entry-move{
+    0%{
+        margin-top: 50px;
+    }
+    100%{
+        margin-top: 0;
+    }
+}
